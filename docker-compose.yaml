@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  backend:
+    build: ./PE_Api
+    ports:
+      - '80:80'
+    volumes: 
+      - logs:/app/logs
+      - ./PE_Api:/app
+      - /app/node_modules
+    env_file: 
+      - ./PE_Api/.env
+  frontend:
+    build: ./PE_Front
+    ports: 
+      - '3000:3000'
+    volumes: 
+      - ./PE_Front/src:/app/src
+    stdin_open: true
+    tty: true
+    depends_on: 
+      - backend
+
+volumes: 
+  data:
+  logs:

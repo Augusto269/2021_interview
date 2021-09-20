@@ -17,8 +17,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.raw(options));
 
-const auth = require('./app/entities/auth/route/auth.route');
-app.use(`/api/auth`, auth);
+const weather = require('./app/entities/weather/router/weather.router')
+app.use(`/api/weather`,weather)
 var port = process.env.PORT || 8000;
 
 app.listen(port, () => {

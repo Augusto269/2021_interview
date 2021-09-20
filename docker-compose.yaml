@@ -8,8 +8,6 @@ services:
       - logs:/app/logs
       - ./API:/app
       - /API/node_modules
-    env_file: 
-      - ./API/.env
   frontend:
     build: ./Front
     ports: 

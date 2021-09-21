@@ -2,11 +2,11 @@ FROM node:10.13.0
 
 WORKDIR /app
 
-COPY /package.json .
+COPY package.json .
 
 RUN npm install
 
-COPY /app .
+COPY . .
 
 EXPOSE 3000
 

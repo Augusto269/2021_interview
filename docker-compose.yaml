@@ -7,7 +7,7 @@ services:
     volumes: 
       - logs:/app/logs
       - ./API:/app
-      - /API/node_modules
+      - /app/node_modules
   frontend:
     build: ./Front
     ports: 
